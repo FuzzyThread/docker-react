@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t fuzzythread/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run fuzzythread/docker-react npm run test -- --coverage
