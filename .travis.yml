@@ -7,12 +7,12 @@ before_install:
 
 script:
     - docker run -e CI=true fuzzythread/docker-react npm run test -- --coverage
-    
+
 deploy:
     provider: elasticbeanstalk
     region: "us-east-2"
     app: "docker-react"
-    env: "Dockerreact-env"
+    env: "Dockerreact-env-1"
     bucket_name: "elasticbeanstalk-us-east-2-412994938044"
     bucket_path: "docker-react"
     on:
