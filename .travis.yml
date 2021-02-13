@@ -8,6 +8,9 @@ before_install:
 script:
     - docker run -e CI=true fuzzythread/docker-react npm run test -- --coverage
 
+before_deploy:
+    - docker build -t fuzzythread/docker-react .
+
 deploy:
     provider: elasticbeanstalk
     region: "us-east-2"
